@@ -32,14 +32,14 @@ export default styles;
 A cleaner way is to expose all classes as named exports, this can be done if you enable the `namedExport`-option.
 e.g.
 ```js
-  { test: /\.css$/, loader: 'typings-for-css-modules-loader?modules&namedExport' }
+  { test: /\.css$/, loader: '@jpavon/typings-for-css-modules-loader?modules&namedExport' }
 ```
 
 As mentioned above, this requires classnames to only contain valid typescript characters, thus filtering out all classnames that do not match /^\w+$/i. (feel free to improve that regexp)
 In order to make sure that even classnames with non-legal characters are used it is highly recommended to use the `camelCase`-option as well, that - once passed to the css-loader - makes sure all classnames are transformed to valid variables.
 with:
 ```js
-  { test: /\.css$/, loader: 'typings-for-css-modules-loader?modules&namedExport&camelCase' }
+  { test: /\.css$/, loader: '@jpavon/typings-for-css-modules-loader?modules&namedExport&camelCase' }
 ```
 using the following css:
 ```css
@@ -65,7 +65,7 @@ To silence the loader because you get annoyed by its warnings or for other reaso
 e.g.:
 
 ```js
-  { test: /\.css$/, loader: 'typings-for-css-modules-loader?silent' }
+  { test: /\.css$/, loader: '@jpavon/typings-for-css-modules-loader?silent' }
 ```
 
 ### `banner`-option
@@ -77,7 +77,7 @@ To add a "banner" prefix to each generated `*.d.ts` file, you can pass a string 
 
 ## Usage
 
-Keep your `webpack.config` as is just instead of using `css-loader` use `typings-for-css-modules-loader`
+Keep your `webpack.config` as is just instead of using `css-loader` use `@jpavon/typings-for-css-modules-loader`
 *its important you keep all the params that you used for the css-loader before, as they will be passed along in the process*
 
 before:
@@ -91,8 +91,8 @@ webpackConfig.module.loaders: [
 after:
 ```js
 webpackConfig.module.loaders: [
-    { test: /\.css$/, loader: 'typings-for-css-modules-loader?modules' }
-    { test: /\.scss$/, loader: 'typings-for-css-modules-loader?modules&sass' }
+    { test: /\.css$/, loader: '@jpavon/typings-for-css-modules-loader?modules' }
+    { test: /\.scss$/, loader: '@jpavon/typings-for-css-modules-loader?modules&sass' }
 ];
 ```
 
@@ -111,7 +111,7 @@ Imagine you have a file `~/my-project/src/component/MyComponent/myComponent.scss
 }
 ```
 
-Adding the `typings-for-css-modules-loader` will generate a file `~/my-project/src/component/MyComponent/myComponent.scss.d.ts` that has the following content:
+Adding the `@jpavon/typings-for-css-modules-loader` will generate a file `~/my-project/src/component/MyComponent/myComponent.scss.d.ts` that has the following content:
 ```ts
 export interface IMyComponentScss {
   'some-class': string;
