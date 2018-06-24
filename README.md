@@ -1,10 +1,13 @@
 # typings-for-css-modules-loader
 
+[![NPM](https://img.shields.io/npm/v/@jpavon/typings-for-css-modules-loader.svg)](https://www.npmjs.com/package/@jpavon/typings-for-css-modules-loader)
+
+
 Webpack loader that works as a css-loader drop-in replacement to generate TypeScript typings for CSS modules on the fly
 
 ## Installation
 
-Install via npm `npm install --save-dev typings-for-css-modules-loader`
+Install via npm `npm install --save-dev @jpavon/typings-for-css-modules-loader`
 
 ## Options
 
