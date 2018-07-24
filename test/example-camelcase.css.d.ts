@@ -4,4 +4,5 @@ export interface IExampleCamelcaseCss {
   'barBaz': string;
 }
 
-export const locals: IExampleCamelcaseCss;
+export const locals: IExampleCamelcaseCss & { [className: string]: string };
+export default locals;
